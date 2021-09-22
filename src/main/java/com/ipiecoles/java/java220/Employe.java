@@ -24,7 +24,17 @@ public class Employe {
 
     }
 
-    public Employe(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, Boolean tempsPartiel, String sexe){
+    public Employe(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire){
+        this.nom = nom;
+        this.prenom = prenom;
+        this.matricule = matricule;
+        this.dateEmbauche = dateEmbauche;
+        this.salaire = salaire;
+
+    }
+
+
+    public Employe(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, Boolean tempsPartiel, String sexe) {
         this.nom = nom;
         this.prenom = prenom;
         this.matricule = matricule;
@@ -33,9 +43,6 @@ public class Employe {
         this.tempsPartiel = tempsPartiel;
         this.sexe = sexe;
     }
-
-
-
 
     public void augmenterSalaire(Double pourcentage){
         //Gérer le cas ou this.salaire est null (NPE)
@@ -124,8 +131,6 @@ public class Employe {
         sb.append(", matricule='").append(matricule).append('\'');
         sb.append(", dateEmbauche=").append(dateEmbauche);
         sb.append(", salaire=").append(salaire);
-        sb.append(", tempsPartiel='").append(tempsPartiel); //Modification de la méthode toString avec les nouveaux attributs
-        sb.append(", sexe='").append(sexe).append('\'');
         sb.append('}');
         return sb.toString();
     }
@@ -140,6 +145,6 @@ public class Employe {
 
     @Override
     public int hashCode() {
-        return Objects.hash(nom, prenom, matricule, dateEmbauche, salaire, tempsPartiel, sexe);
+        return Objects.hash(nom, prenom, matricule, dateEmbauche, salaire);
     }
 }

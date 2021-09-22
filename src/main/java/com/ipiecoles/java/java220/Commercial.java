@@ -9,8 +9,8 @@ public class Commercial extends Employe {
     private Double caAnnuel;
     private  Integer performance;
 
-    public Commercial(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, Boolean tempsPartiel, String sexe, Double caAnnuel) {
-        super(nom, prenom, matricule, dateEmbauche, salaire, tempsPartiel, sexe);
+    public Commercial(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, Double caAnnuel) {
+        super(nom, prenom, matricule, dateEmbauche, salaire);
         this.caAnnuel = caAnnuel;
     }
 
@@ -19,8 +19,8 @@ public class Commercial extends Employe {
     }
 
 
-    public Commercial(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, Boolean tempsPartiel, String sexe, Double caAnnuel, Integer performance) {
-        super(nom, prenom, matricule, dateEmbauche, salaire, tempsPartiel, sexe);
+    public Commercial(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire,  Double caAnnuel, Integer performance) {
+        super(nom, prenom, matricule, dateEmbauche, salaire);
         this.caAnnuel = caAnnuel;
         this.performance = performance;
     }

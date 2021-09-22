@@ -22,6 +22,8 @@ public class Main {
         System.out.println(employe2.getMatricule());
         System.out.println(employe2.getDateEmbauche().getYear());
         System.out.println(employe2.getSalaire());
+        System.out.println(employe2.getTempsPartiel());
+        System.out.println(employe2.getSexe());
         System.out.println(employe2.getNombreAnneeAnciennete());
 
 

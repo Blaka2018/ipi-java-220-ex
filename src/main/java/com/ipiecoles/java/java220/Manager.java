@@ -16,8 +16,8 @@ public class Manager extends Employe {
     }
 
     public void ajoutTechnicienEquipe(String nom, String prenom, String matricule,
-                                      LocalDate dateEmbauche, Double salaire, Boolean tempsPartiel, String sexe, Integer grade){
-        this.ajoutTechnicienEquipe(new Technicien(nom, prenom, matricule, dateEmbauche, salaire, tempsPartiel, sexe, grade));
+                                      LocalDate dateEmbauche, Double salaire, Integer grade){
+        this.ajoutTechnicienEquipe(new Technicien(nom, prenom, matricule, dateEmbauche, salaire, grade));
     }
 
     @Override

@@ -17,8 +17,8 @@ public class Technicien extends Employe{
 
     //Création du constructeur technicien qui hérite des attributs d'employé
 
-    public Technicien(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, Boolean tempsPartiel, String sexe, Integer grade) {
-        super(nom, prenom, matricule, dateEmbauche, salaire, tempsPartiel, sexe);
+    public Technicien(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, Integer grade) {
+        super(nom, prenom, matricule, dateEmbauche, salaire);
         this.grade = grade;
     }
 
