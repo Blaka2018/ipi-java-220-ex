@@ -15,18 +15,27 @@ public class Employe {
    private LocalDate dateEmbauche;
    private Double salaire;
 
+   // Ajout des attributs tempsPartiel et sexe
+    private Boolean tempsPartiel;
+    private String sexe;
+
     //Création du constructeur
     public Employe(){
 
     }
 
-    public Employe(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire){
+    public Employe(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, Boolean tempsPartiel, String sexe){
         this.nom = nom;
         this.prenom = prenom;
         this.matricule = matricule;
         this.dateEmbauche = dateEmbauche;
         this.salaire = salaire;
+        this.tempsPartiel = tempsPartiel;
+        this.sexe = sexe;
     }
+
+
+
 
     public void augmenterSalaire(Double pourcentage){
         //Gérer le cas ou this.salaire est null (NPE)
@@ -70,6 +79,23 @@ public class Employe {
         return Entreprise.primeAnnuelleBase();
     }
 
+    //Getter et Setter des attributs tempsPartiel et sexe
+    public Boolean getTempsPartiel() {
+        return tempsPartiel;
+    }
+
+    public void setTempsPartiel(Boolean tempsPartiel) {
+        this.tempsPartiel = tempsPartiel;
+    }
+
+    public String getSexe() {
+        return sexe;
+    }
+
+    public void setSexe(String sexe) {
+        this.sexe = sexe;
+    }
+
 
     public void setDateEmbauche(LocalDate dateEmbauche) throws Exception {
         if (dateEmbauche == null) {
@@ -98,6 +124,8 @@ public class Employe {
         sb.append(", matricule='").append(matricule).append('\'');
         sb.append(", dateEmbauche=").append(dateEmbauche);
         sb.append(", salaire=").append(salaire);
+        sb.append(", tempsPartiel='").append(tempsPartiel); //Modification de la méthode toString avec les nouveaux attributs
+        sb.append(", sexe='").append(sexe).append('\'');
         sb.append('}');
         return sb.toString();
     }
@@ -107,11 +135,11 @@ public class Employe {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employe employe = (Employe) o;
-        return Objects.equals(nom, employe.nom) && Objects.equals(prenom, employe.prenom) && Objects.equals(matricule, employe.matricule) && Objects.equals(dateEmbauche, employe.dateEmbauche) && Objects.equals(salaire, employe.salaire);
+        return Objects.equals(nom, employe.nom) && Objects.equals(prenom, employe.prenom) && Objects.equals(matricule, employe.matricule) && Objects.equals(dateEmbauche, employe.dateEmbauche) && Objects.equals(salaire, employe.salaire) && Objects.equals(tempsPartiel, employe.tempsPartiel) && Objects.equals(sexe, employe.sexe);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nom, prenom, matricule, dateEmbauche, salaire);
+        return Objects.hash(nom, prenom, matricule, dateEmbauche, salaire, tempsPartiel, sexe);
     }
 }

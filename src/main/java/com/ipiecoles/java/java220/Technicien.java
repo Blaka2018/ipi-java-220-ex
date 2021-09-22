@@ -2,6 +2,8 @@ package com.ipiecoles.java.java220;
 
 import org.joda.time.LocalDate;
 
+import java.util.Objects;
+
 public class Technicien extends Employe{
 
     //Attribut de la classe technicien
@@ -15,8 +17,8 @@ public class Technicien extends Employe{
 
     //Création du constructeur technicien qui hérite des attributs d'employé
 
-    public Technicien(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, Integer grade) {
-        super(nom, prenom, matricule, dateEmbauche, salaire);
+    public Technicien(String nom, String prenom, String matricule, LocalDate dateEmbauche, Double salaire, Boolean tempsPartiel, String sexe, Integer grade) {
+        super(nom, prenom, matricule, dateEmbauche, salaire, tempsPartiel, sexe);
         this.grade = grade;
     }
 
@@ -46,5 +48,19 @@ public class Technicien extends Employe{
     public Double getPrimeAnnuelle() {
         return super.getPrimeAnnuelle() * (1 + grade / 10d)
                 + Entreprise.PRIME_ANCIENNETE * this.getNombreAnneeAnciennete();
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Technicien that = (Technicien) o;
+        return Objects.equals(grade, that.grade);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), grade);
     }
 }
